@@ -59,7 +59,7 @@ class MailchimpException extends \Exception
      * @param \Throwable $previous
      * @todo Fix $status: Optional parameter is provided before required.
      */
-    public function __construct($status = 0, $detail, $type, $title, $errors = null, $instance = null, \Throwable $previous=null)
+    public function __construct($status, $detail, $type, $title, $errors = null, $instance = null, \Throwable $previous=null)
     {
         parent::__construct($detail, $status, $previous);
 
