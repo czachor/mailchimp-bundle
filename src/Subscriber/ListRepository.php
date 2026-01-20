@@ -553,7 +553,7 @@ class ListRepository
     private function throwMailchimpError(array $errorResponse): void
     {
         try {
-            $errorArray = json_decode($errorResponse['body'], true, 512, JSON_THROW_ON_ERROR);
+            $errorArray = json_decode($errorResponse['body'] === null ? '' : $errorResponse['body'], true, 512, JSON_THROW_ON_ERROR);
         } catch (\JsonException $e) {
             throw new MailchimpException(
                 400,
